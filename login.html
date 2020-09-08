@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <div class="wrapper fadeInDown">
+      <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div class="fadeIn first">
+          <img src="https://cdn.glitch.com/79076292-70c1-4218-998b-b788105c1f02%2FDev_Logo-03_Large.png?v=1599163525654" id="icon" alt="User Icon" />
+        </div>
+
+        <!-- Login Form -->
+        <form action="/authenticate" method="POST">
+          <input type="text" id="userName" class="fadeIn second" name="userName" placeholder="login">
+          <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
+          <input type="submit" class="fadeIn fourth" value="Log In">
+        </form>
+        <script>
+
+          var urlParams = new URLSearchParams(window.location.search);
+          var hint = urlParams.get('login_hint')
+          if(hint) {
+            document.getElementById("userName").value = hint;
+            document.getElementById("password").focus();
+          }
+        </script>
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+          <a class="underlineHover" href="#">Forgot Password?</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
